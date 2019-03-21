@@ -46,7 +46,7 @@ export default {
       })
     },
     getPageCurrent() {
-      db.collection("pages").where("status", "==", true).where("url", "==", this.$route.path).limit(1).get().then(data => {
+      db.collection("sections").where("status", "==", true).where("type", "==", "page").where("url", "==", this.$route.path).limit(1).get().then(data => {
         var page_current = [];
         data.forEach(row => {
           page_current.push(row.data())
