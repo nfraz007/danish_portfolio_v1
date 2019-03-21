@@ -1,12 +1,7 @@
 <template>
   <div class="work">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="title">{{ sections.skills.name }}</div>
-					<p class="title-description">{{ sections.skills.description }}</p>
-				</div>
-			</div>
+			<Section :sections="sections" type="skills"></Section>
 			<div class="gap"></div>
 			<div>
 				<div class="row">
@@ -47,12 +42,13 @@
 </template>
 
 <script>
+import Section from '../include/Section';
 
 export default {
 	name: 'Skill',
 	props: ["sections"],
 	components: {
-		
+		Section
 	},
 	data () {
 		return {

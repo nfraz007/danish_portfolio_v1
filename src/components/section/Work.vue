@@ -1,12 +1,7 @@
 <template>
   <div class="work">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="title">Experiences</div>
-					<p class="title-description">I have gained firsthand experience working in crucial project timelines.</p>
-				</div>
-			</div>
+			<Section :sections="sections" type="work_experiences"></Section>
 			<div class="gap"></div>
 			<div v-for="(work, index) in works" :key="work.id">
 				<div v-if="limit == 0 || index < limit">
@@ -36,12 +31,13 @@
 </template>
 
 <script>
+import Section from '../include/Section';
 
 export default {
 	name: 'Work',
-	props: ["works", "limit"],
+	props: ["sections", "works", "limit"],
 	components: {
-		
+		Section
 	},
 	data () {
 		return {

@@ -1,12 +1,7 @@
 <template>
   <div class="project">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="title">Projects</div>
-					<p class="title-description">Whenever I learn something new, I make a project on this and add it to my github profile because I firmly believe that knowledge sharing is very important.</p>
-				</div>
-			</div>
+			<Section :sections="sections" type="projects"></Section>
 			<div class="gap"></div>
 			<div v-for="work in works" :key="work">
 				<div class="row">
@@ -36,12 +31,13 @@
 </template>
 
 <script>
+import Section from '../include/Section';
 
 export default {
 	name: 'Project',
-	props: ["user"],
+	props: ["sections", "user"],
 	components: {
-		
+		Section
 	},
 	data () {
 		return {

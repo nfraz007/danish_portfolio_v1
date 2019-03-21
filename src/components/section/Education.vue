@@ -1,12 +1,7 @@
 <template>
   <div class="education">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="title">Education</div>
-					<p class="title-description">All my life I have been driven by my strong belief that education is important. I try to learn something new every single day.</p>
-				</div>
-			</div>
+			<Section :sections="sections" type="educations"></Section>
 			<div class="gap"></div>
 			<div>
 				<div class="row">
@@ -30,12 +25,13 @@
 </template>
 
 <script>
+import Section from '../include/Section';
 
 export default {
 	name: 'Education',
-	props: ["educations"],
+	props: ["sections", "educations"],
 	components: {
-		
+		Section
 	},
 	data () {
 		return {

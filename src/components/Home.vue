@@ -6,15 +6,15 @@
 			<div class="gap"></div>
 			<ProfileCounter></ProfileCounter>
 			<div class="gap"></div>
-			<Skill :sections="sections" ></Skill>
+			<Skill :sections="sections"></Skill>
 			<div class="gap"></div>
 			<hr>
 			<div class="gap"></div>
-			<Work :sections="sections"  :works="works" :limit="2"></Work>
+			<Work :sections="sections" :works="works" :limit="2"></Work>
 			<div class="gap"></div>
 			<hr>
 			<div class="gap"></div>
-			<Education :sections="sections"  :educations="educations"></Education>
+			<Education :sections="sections" :educations="educations"></Education>
 			<div class="gap"></div>
 		</div>
 		<Footer :user="user" :pages="pages" :socials="socials"></Footer>
