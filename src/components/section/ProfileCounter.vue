@@ -2,20 +2,20 @@
   <div class="profile_counter">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
-					<div class="count">3</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="count">{{ counter.experiences }}</div>
 					<div class="name">Years Experience</div>
 				</div>
-				<div class="col-sm-3">
-					<div class="count">13</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="count">{{ counter.projects }}</div>
 					<div class="name">Projects</div>
 				</div>
-				<div class="col-sm-3">
-					<div class="count">5</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="count">{{ counter.certifications }}</div>
 					<div class="name">Certifications</div>
 				</div>
-				<div class="col-sm-3">
-					<div class="count">3</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="count">{{ counter.achievements }}</div>
 					<div class="name">Achievements</div>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 
 export default {
 	name: 'ProfileCounter',
-	props: ["user"],
+	props: ["counter"],
 	components: {
 		
 	},

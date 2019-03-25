@@ -4,9 +4,9 @@
 		<div class="home">
 			<Profile :sections="sections" :user="user" :socials="socials"></Profile>
 			<div class="gap"></div>
-			<ProfileCounter></ProfileCounter>
+			<ProfileCounter :counter="counter"></ProfileCounter>
 			<div class="gap"></div>
-			<Skill :sections="sections"></Skill>
+			<Skill :sections="sections" :skills="skills"></Skill>
 			<div class="gap"></div>
 			<hr>
 			<div class="gap"></div>
@@ -31,7 +31,7 @@ import Education from './section/Education';
 
 export default {
 	name: 'home',
-	props: ["user", "pages", "sections", "page_current", "socials", "works", "educations"],
+	props: ["user", "pages", "sections", "page_current", "socials", "counter", "skills", "works", "educations"],
 	components: {
 		Header,
 		Footer,

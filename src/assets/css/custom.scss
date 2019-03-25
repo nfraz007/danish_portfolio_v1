@@ -66,6 +66,7 @@ $grey_dark: #888;
     padding: 20px;
     border: 1px solid $grey;
     box-shadow: 5px 5px 10px $grey;
+    margin-bottom: 10px;
     &-title {
         color: $primary;
         font-weight: bold;
@@ -81,4 +82,54 @@ $grey_dark: #888;
 
 .badge {
     padding: 5px 10px;
+    background: $primary;
+    margin: 2px 4px;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 14px !important;
+        .main {
+            padding: 0;
+        }
+        .gap {
+            padding: 10px 0 !important;
+            &-small {
+                padding: 5px 0 !important;
+            }
+        }
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    body {
+        font-size: 15px !important;
+        
+        .gap {
+            padding: 10px 0 !important;
+            &-small {
+                padding: 6px 0 !important;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    body {
+        .gap {
+            padding: 15px 0 !important;
+            &-small {
+                padding: 9px 0 !important;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        
+        .gap {
+            padding: 20px 0 !important;
+            &-small {
+                padding: 12px 0 !important;
+            }
+        }
+    }
 }

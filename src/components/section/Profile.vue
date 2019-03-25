@@ -3,10 +3,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2>I</h2>
-					<h2>AM</h2>
+					<h2>I AM</h2>
 					<h1>{{ user.full_name }}</h1>
 					<h3>{{ user.designation }}</h3>
+					<p>{{ user.description }}</p>
 					<div class="gap-small"></div>
 					<div class="btn-group">
 						<a :href="user.resume" role="button" class="btn btn-primary" download><i class="fa fa-download"></i>&nbsp; Download Resume</a>
@@ -62,5 +62,26 @@ ul {
 	h1 {
 		background: $primary
 	}
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+		font-size: 30px !important;
+	}
+	h2 {
+		font-size: 25px !important;
+	}
+	.btn-socials {
+
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    
+}
+@media screen and (min-width: 1200px) {
+    
 }
 </style>

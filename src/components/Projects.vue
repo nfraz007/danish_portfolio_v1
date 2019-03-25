@@ -2,7 +2,7 @@
   <div class="main">
 		<Header :user="user" :pages="pages" :page_current="page_current"></Header>
 		<div class="projects">
-			<Project :sections="sections" ></Project>
+			<Project :sections="sections" :projects="projects"></Project>
 			<div class="gap"></div>
 		</div>
 		<Footer :user="user" :pages="pages" :socials="socials"></Footer>
@@ -15,7 +15,7 @@ import Project from './section/Project';
 
 export default {
   	name: 'Projects',
-  	props: ["user", "pages", "sections", "page_current", "socials"],
+  	props: ["user", "pages", "sections", "page_current", "projects", "socials"],
   	components: {
     	Header,
 			Footer,

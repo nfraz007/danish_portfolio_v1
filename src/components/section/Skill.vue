@@ -5,36 +5,13 @@
 			<div class="gap"></div>
 			<div>
 				<div class="row">
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-title">
-                                FrontEnd
-                            </div>
-                            <div class="card-body">
-                                <p>php, html, database, mysql</p>
-                            </div>
-                        </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <p v-if="skills.length">
+                            <span v-for="skill in skills" :key="skill.id" class="badge">{{ skill.name }}</span>
+                        </p>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-title">
-                                FrontEnd
-                            </div>
-                            <div class="card-body">
-                                <p>php, html, database, mysql</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-title">
-                                FrontEnd
-                            </div>
-                            <div class="card-body">
-                                <p>php, html, database, mysql</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-sm-2"></div>
 				</div>
 			</div>
 		</div>
@@ -46,7 +23,7 @@ import Section from '../include/Section';
 
 export default {
 	name: 'Skill',
-	props: ["sections"],
+	props: ["sections", "skills"],
 	components: {
 		Section
 	},

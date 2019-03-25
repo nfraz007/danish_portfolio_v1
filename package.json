@@ -13,7 +13,8 @@
     "@firebase/app": "^0.3.12",
     "@firebase/firestore": "^1.1.0",
     "firebase": "^5.9.0",
-    "vue": "^2.5.2",
+    "moment": "^2.24.0",
+    "vue": "2.6.9",
     "vue-firestore": "^0.3.21",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5"

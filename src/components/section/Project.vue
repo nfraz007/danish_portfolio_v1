@@ -3,21 +3,21 @@
 		<div class="container">
 			<Section :sections="sections" type="projects"></Section>
 			<div class="gap"></div>
-			<div v-for="work in works" :key="work">
+			<div v-for="project in projects" :key="project.id">
 				<div class="row">
 					<div class="col-sm-2"></div>
 					<div class="col-sm-8">
 						<div class="card">
 							<div class="card-title">
-								Dinars Inventory
+								{{ project.name }}
 							</div>
 							<div class="card-body">
-								<p class="date">From 2018 sept 15 to 2018-20 * 2 month</p>
-								<p class="description">This is a inventory and billing software made in laravel. A Parent company can create multiple child complany and see the order and payment flow done by child company. Parent will transfer stock to the child company. Child company will sell all this product to their customer. They can generate invoice, download reports and lots of thing.</p>
-								<p><span class="badge">HTML</span> <span class="badge">php</span></p>
-                                <div class="btn-group">
-									<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-code"></i>&nbsp; View Code</button>
-									<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-laptop"></i>&nbsp; Live Demo</button>
+								<p class="date">From {{ format(project.start_at) }} to {{ format(project.end_at) }} <i class="fa fa-circle"></i> {{ date_diff(project.start_at, project.end_at) }}</p>
+								<p class="description">{{ project.description }}</p>
+								<div v-if="project.technology"><span v-for="tech in project.technology" :key="tech" class="badge">{{ tech }}</span></div>
+                				<div class="btn-group">
+									<a v-if="project.url_code" role="button" class="btn btn-primary btn-sm"><i class="fa fa-code"></i>&nbsp; View Code</a>
+									<a v-if="project.url_demo" role="button" class="btn btn-primary btn-sm"><i class="fa fa-laptop"></i>&nbsp; Live Demo</a>
 								</div>
 							</div>
 						</div>
@@ -35,13 +35,13 @@ import Section from '../include/Section';
 
 export default {
 	name: 'Project',
-	props: ["sections", "user"],
+	props: ["sections", "user", "projects"],
 	components: {
 		Section
 	},
 	data () {
 		return {
-			works: [1,2]
+			
 		}
 	}
 }

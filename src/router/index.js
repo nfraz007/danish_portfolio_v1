@@ -24,10 +24,10 @@ export default new Router({
       name: 'Projects',
       component: Projects
     },
-    {
-      path: '/certifications',
-      name: 'Certifications',
-      component: Certifications
-    }
+    // {
+    //   path: '/certifications',
+    //   name: 'Certifications',
+    //   component: Certifications
+    // }
   ]
 })

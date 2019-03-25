@@ -13,7 +13,7 @@
 									{{ work.designation }} @ {{ work.company_name }}
 								</div>
 								<div class="card-body">
-									<p class="date">From {{ work.start_at }} 15 to {{ work.end_at }}</p>
+									<p class="date">From {{ format(work.start_at) }} to {{ format(work.end_at) }} <i class="fa fa-circle"></i> {{ date_diff(work.start_at, work.end_at) }}</p>
 									<p class="description">{{ work.description }}</p>
 									<div class="btn-group">
 										<a :href="work.website" role="button" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i>&nbsp; Company Website</a>

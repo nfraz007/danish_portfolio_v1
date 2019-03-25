@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <router-view :user="user" :pages="pages" :sections="sections" :page_current="page_current" :socials="socials" :works="works" :educations="educations" />
+    <router-view :user="user" :pages="pages" :sections="sections" :page_current="page_current" :socials="socials" :counter="counter" :skills="skills" :works="works" :projects="projects" :educations="educations" />
   </div>
 </template>
 
 <script>
-import db from "./firebase"
+import db from "./firebase";
+import * as moment from 'moment';
 
 export default {
   name: 'App',
@@ -17,14 +18,18 @@ export default {
       page_current: {},
       settings: [],
       socials: [],
+      skills: [],
       works: [],
+      projects: [],
       educations: []
     }
   },
   firestore() {
     return {
       socials: db.collection("socials").where("status", "==", true).orderBy("sort", "asc"),
+      skills: db.collection("skills").where("status", "==", true).orderBy("sort", "asc"),
       works: db.collection("works").where("status", "==", true).orderBy("start_at", "desc"),
+      projects: db.collection("projects").where("status", "==", true).orderBy("start_at", "desc"),
       educations: db.collection("educations").where("status", "==", true).orderBy("sort", "asc"),
     }
   },
@@ -67,6 +72,29 @@ export default {
         this.sections = sections;
       })
     }
+  },
+  computed: {
+    counter() {
+      var experiences = 0;
+      var works = this.works.map(function(work){
+        var now = moment();
+        var start_at = (work.start_at) ? moment(work.start_at) : now;
+        var end_at = (work.end_at) ? moment(work.end_at) : now;
+        var diff = end_at.diff(start_at, "years", true)
+        experiences += diff
+        return diff
+      });
+      var projects = this.projects.length;
+      var certifications = 5;
+      var achievements = 3;
+      
+      return {
+        experiences: Math.round(experiences*10)/10,
+        projects: projects,
+        certifications: certifications,
+        achievements: achievements
+      }
+    },
   }
 }
 </script>

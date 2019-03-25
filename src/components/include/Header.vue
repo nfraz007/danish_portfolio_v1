@@ -2,7 +2,7 @@
 	<div class="header">
         <head>
             <title>{{ [ user.full_name, page_current.name ].join(" | ") }}</title>
-            <meta name="description" content="">
+            <meta name="description" :content="page_current.description">
             <meta name="keywords" :content="[user.first_name, user.last_name, user.full_name, user.designation, user.website, user.address].join(', ')">
             <meta name="author" :content="user.full_name">
         </head>
@@ -67,5 +67,22 @@ export default {
             }
         }
     }
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        nav {
+            padding: 0;
+        }
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+    
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    
+}
+@media screen and (min-width: 1200px) {
+    
 }
 </style>
