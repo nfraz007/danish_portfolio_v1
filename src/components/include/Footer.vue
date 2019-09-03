@@ -26,7 +26,7 @@
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-sm-12">
-					    <p>Created &amp; Maintained By <a href="http://nfraz.co.nf" target="_blank">Nazish Fraz</a></p>
+					    <p>Created &amp; Maintained By <a href="http://nfraz.co.in" target="_blank">Nazish Fraz</a></p>
 				    </div>
 			    </div>
 		    </div>
